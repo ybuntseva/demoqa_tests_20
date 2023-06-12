@@ -57,7 +57,5 @@ public class RegistrationWithPageObjectsTest extends TestBase {
                 .verifyResults("Picture", "Zugpsitze_mountain.jpeg")
                 .verifyResults("Address", userAddress)
                 .verifyResults("State and City", "Uttar Pradesh Agra");
-
-        sleep(10000);
     }
 }
