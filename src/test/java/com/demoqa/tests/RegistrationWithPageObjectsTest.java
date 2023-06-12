@@ -15,8 +15,6 @@ public class RegistrationWithPageObjectsTest extends TestBase {
     String userEmail = "juliabuntseva@gmail.com";
     String gender = "Female";
     String userNumber = "6003319000";
-    String yearOfBirth = "1990";
-    String monthOfBirth = "March";
     String subject = "Chemistry";
     String hobby1 = "Music";
     String hobby2 = "Reading";
@@ -29,6 +27,8 @@ public class RegistrationWithPageObjectsTest extends TestBase {
 
     @Test
     void successfulRegistrationTest() {
+
+        // Fill out registration form
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -44,19 +44,20 @@ public class RegistrationWithPageObjectsTest extends TestBase {
                 .setStateCity(state, city)
                 .clickSubmit();
 
-//        // Проверить, что введенные данные отображаются в сводной таблице после нажатия кнопки Submit
-//        $(byText(submitMessage)).shouldBe(Condition.visible);
-//        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Helen Smith"));
-//        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(userEmail));
-//        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text(gender));
-//        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(userNumber));
-//        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("28 March,1990"));
-//        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subject));
-//        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(hobby1));
-//        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(hobby2));
-//        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("Zugpsitze_mountain.jpeg"));
-//        $(".table-responsive").$(byText("Address")).parent().shouldHave(text(userAddress));
-//        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Agra"));
+        // Verify results
+
+        registrationPage.verifyModalWindow()
+                .verifyResults("Student Name", "Helen Smith")
+                .verifyResults("Student Email", userEmail)
+                .verifyResults("Gender", gender)
+                .verifyResults("Mobile", userNumber)
+                .verifyResults("Date of Birth", "28 March,1990")
+                .verifyResults("Subjects", subject)
+                .verifyResults("Hobbies", "Music, Reading")
+                .verifyResults("Picture", "Zugpsitze_mountain.jpeg")
+                .verifyResults("Address", userAddress)
+                .verifyResults("State and City", "Uttar Pradesh Agra");
+
         sleep(10000);
     }
 }

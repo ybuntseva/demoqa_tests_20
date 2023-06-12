@@ -1,10 +1,8 @@
 package com.demoqa.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.pages.components.CalendarComponent;
-import com.demoqa.pages.components.FileUploadComponent;
-import com.demoqa.pages.components.StateCityComponent;
-import com.demoqa.pages.components.SubmitButtonComponent;
+import com.demoqa.pages.components.*;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -16,6 +14,7 @@ public class RegistrationPage {
     StateCityComponent stateCityComponent = new StateCityComponent();
     FileUploadComponent fileUploadComponent = new FileUploadComponent();
     SubmitButtonComponent submitButtonComponent = new SubmitButtonComponent();
+    SubmitModalWindowComponent submitModalWindowComponent = new SubmitModalWindowComponent();
 
     // String loginInputLocator = "#firstName"; BAD PRACTICE
 
@@ -107,6 +106,18 @@ public class RegistrationPage {
 
     public RegistrationPage clickSubmit() {
         submitButtonComponent.clickSubmit();
+
+        return this;
+    }
+
+    public RegistrationPage verifyModalWindow() {
+        submitModalWindowComponent.verifyModalWindow();
+
+        return this;
+    }
+
+    public RegistrationPage verifyResults(String nameElement, String value) {
+        submitModalWindowComponent.verifyTableResults(nameElement, value);
 
         return this;
     }
