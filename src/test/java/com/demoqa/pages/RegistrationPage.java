@@ -1,6 +1,5 @@
 package com.demoqa.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.*;
 
