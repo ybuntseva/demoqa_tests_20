@@ -3,7 +3,6 @@ package com.demoqa.tests;
 import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.demoqa.utils.RandomUtils.*;
 
 public class RegistrationWithTestDataTests extends TestBase {
@@ -23,6 +22,7 @@ public class RegistrationWithTestDataTests extends TestBase {
             userAddress = getRandomAddress(),
             state = getRandomState(),
             city = getRandomCity(state);
+
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
@@ -30,6 +30,7 @@ public class RegistrationWithTestDataTests extends TestBase {
 
         // Fill out registration form
         registrationPage.openPage()
+                .removeBannersFooter()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
@@ -57,7 +58,5 @@ public class RegistrationWithTestDataTests extends TestBase {
                 .verifyResults("Picture", fileName)
                 .verifyResults("Address", userAddress)
                 .verifyResults("State and City", state + " " + city);
-
-        sleep(10000);
     }
 }

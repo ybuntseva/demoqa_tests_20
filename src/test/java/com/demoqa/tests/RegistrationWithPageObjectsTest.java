@@ -23,6 +23,7 @@ public class RegistrationWithPageObjectsTest extends TestBase {
 
         // Fill out registration form
         registrationPage.openPage()
+                .removeBannersFooter()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
@@ -40,15 +41,15 @@ public class RegistrationWithPageObjectsTest extends TestBase {
         // Verify results
 
         registrationPage.verifyModalWindow()
-                .verifyResults("Student Name", "Helen Smith")
+                .verifyResults("Student Name", firstName+" "+lastName)
                 .verifyResults("Student Email", userEmail)
                 .verifyResults("Gender", gender)
                 .verifyResults("Mobile", userNumber)
                 .verifyResults("Date of Birth", "28 March,1990")
                 .verifyResults("Subjects", subject)
-                .verifyResults("Hobbies", "Music, Reading")
+                .verifyResults("Hobbies", hobby1+", "+hobby2)
                 .verifyResults("Picture", "Zugpsitze_mountain.jpeg")
                 .verifyResults("Address", userAddress)
-                .verifyResults("State and City", "Uttar Pradesh Agra");
+                .verifyResults("State and City", state+" "+city);
     }
 }

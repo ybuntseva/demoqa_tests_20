@@ -37,11 +37,11 @@ public class RandomUtils {
         return getRandomItemFromArray(genders);
     }
 
-    public static String getRandomFakerGender() {
-        String[] genders = {"Male", "Female", "Other"};
-
-        return new Faker().options().option(genders);
-    }
+//    public static String getRandomFakerGender() {
+//        String[] genders = {"Male", "Female", "Other"};
+//
+//        return new Faker().options().option(genders);
+//    }
 
     public static String getRandomPhoneNumber() {
 
@@ -49,11 +49,11 @@ public class RandomUtils {
     }
 
 //     +3 (263) 253 - 66 - 12
-    public static String getRandomPhone() {
-
-        return String.format("+%s (%s) %s - %s - %s", getRandomInt(1, 9), getRandomInt(111, 999),
-                getRandomInt(111, 999), getRandomInt(11, 99), getRandomInt(11, 99));
-    }
+//    public static String getRandomPhone() {
+//
+//        return String.format("+%s (%s) %s - %s - %s", getRandomInt(1, 9), getRandomInt(111, 999),
+//                getRandomInt(111, 999), getRandomInt(11, 99), getRandomInt(11, 99));
+//    }
 
     public static String getRandomMonth() {
         String[] months = {"January", "February", "March", "April",
@@ -63,13 +63,13 @@ public class RandomUtils {
         return getRandomItemFromArray(months);
     }
 
-    public static String getRandomFakerMonth() {
-        String[] months = {"January", "February", "March", "April",
-                "May", "June", "July", "August",
-                "September", "October", "November", "December"};
-
-        return new Faker().options().option(months);
-    }
+//    public static String getRandomFakerMonth() {
+//        String[] months = {"January", "February", "March", "April",
+//                "May", "June", "July", "August",
+//                "September", "October", "November", "December"};
+//
+//        return new Faker().options().option(months);
+//    }
 
     public static String getRandomFakerDay() {
 
@@ -82,11 +82,11 @@ public class RandomUtils {
         return getRandomItemFromArray(hobbies);
     }
 
-    public static String getRandomFakerHobby() {
-        String[] hobbies = {"Sports", "Reading", "Music"};
-
-        return new Faker().options().option(hobbies);
-    }
+//    public static String getRandomFakerHobby() {
+//        String[] hobbies = {"Sports", "Reading", "Music"};
+//
+//        return new Faker().options().option(hobbies);
+//    }
 
     public static String getRandomSubject() {
         String[] subjects = {"Accounting", "Arts", "Biology", "Chemistry", "Civics",
