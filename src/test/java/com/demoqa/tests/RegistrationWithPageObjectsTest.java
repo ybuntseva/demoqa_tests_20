@@ -1,9 +1,11 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationPage;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class RegistrationWithPageObjectsTest extends TestBase {
+public class RegistrationWithPageObjectsTest extends RemoteTestBase {
 
     String firstName = "Helen";
     String lastName = "Smith";
@@ -19,6 +21,8 @@ public class RegistrationWithPageObjectsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
+    @Tag("remote")
+    @DisplayName("Successful registration with PageObjects")
     void successfulRegistrationTest() {
 
         // Fill out registration form

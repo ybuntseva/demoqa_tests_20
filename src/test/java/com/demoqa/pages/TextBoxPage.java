@@ -20,9 +20,14 @@ public class TextBoxPage {
 
     public TextBoxPage openPage() {
         open("/text-box");
+        mainHeader.shouldHave(text("Text Box"));
+
+        return this;
+    }
+
+    public TextBoxPage removeBannersFooter() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
-        mainHeader.shouldHave(text("Text Box"));
 
         return this;
     }
