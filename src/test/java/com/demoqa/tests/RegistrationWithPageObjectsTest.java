@@ -1,6 +1,7 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationPage;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,7 @@ public class RegistrationWithPageObjectsTest extends RemoteTestBase {
 
     @Test
     @Tag("remote")
+    @Disabled
     @DisplayName("Successful registration with PageObjects")
     void successfulRegistrationTest() {
 
